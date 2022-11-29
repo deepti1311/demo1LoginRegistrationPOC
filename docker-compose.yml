@@ -1,0 +1,16 @@
+version: "3"
+services:
+  postgres:
+    image: postgres:11.14-alpine
+    container_name: demoLogin
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    restart: always
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: 'trust'
+
+
+volumes:
+  pg_data:
